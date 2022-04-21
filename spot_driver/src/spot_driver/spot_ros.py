@@ -72,20 +72,20 @@ class SpotROS():
             self.joint_state_pub.publish(joint_state)
 
             ## TF ##
-            tf_msg = GetTFFromState(state, self.spot_wrapper, self.mode_parent_odom_tf)
-            if len(tf_msg.transforms) > 0:
-                self.tf_pub.publish(tf_msg)
+            # tf_msg = GetTFFromState(state, self.spot_wrapper, self.mode_parent_odom_tf)
+            # if len(tf_msg.transforms) > 0:
+            #     self.tf_pub.publish(tf_msg)
 
-            # Odom Twist #
-            twist_odom_msg = GetOdomTwistFromState(state, self.spot_wrapper)
-            self.odom_twist_pub.publish(twist_odom_msg)
+            # # Odom Twist #
+            # twist_odom_msg = GetOdomTwistFromState(state, self.spot_wrapper)
+            # self.odom_twist_pub.publish(twist_odom_msg)
 
-            # Odom #
-            if self.mode_parent_odom_tf == 'vision':
-                odom_msg = GetOdomFromState(state, self.spot_wrapper, use_vision=True)
-            else:
-                odom_msg = GetOdomFromState(state, self.spot_wrapper, use_vision=False)
-            self.odom_pub.publish(odom_msg)
+            # # Odom #
+            # if self.mode_parent_odom_tf == 'vision':
+            #     odom_msg = GetOdomFromState(state, self.spot_wrapper, use_vision=True)
+            # else:
+            #     odom_msg = GetOdomFromState(state, self.spot_wrapper, use_vision=False)
+            # self.odom_pub.publish(odom_msg)
 
             # Feet #
             foot_array_msg = GetFeetFromState(state, self.spot_wrapper)

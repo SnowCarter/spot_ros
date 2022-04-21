@@ -13,6 +13,7 @@
     <param name="username" value="$(arg username)" />
     <param name="password" value="$(arg password)" />
     <param name="hostname" value="$(arg hostname)" />
+    <param name="tf_prefix" value="r$(env ROBOT_ID)" />
     <param name="estop_timeout" value="$(arg estop_timeout)"/>
     <remap from="joint_states" to="/joint_states"/>
     <remap from="tf" to="/tf"/>

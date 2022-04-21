@@ -13,12 +13,20 @@
         </collision>
     </link>
 
-    <link name="base_link"/>
+    <!-- <link name="map"/> -->
+    <!-- <link name="odom"/> 
+    <joint name="odom_map" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="map" />
+        <child link="odom" />
+    </joint> -->
+
+    <!-- <link name="base_link"/>
     <joint name="base_link_joint" type="fixed">
         <origin xyz="0 0 0" rpy="0 0 0" />
         <parent link="body" />
         <child link="base_link" />
-    </joint>
+    </joint> -->
 
     <link name="front_rail"/>
     <joint name="front_rail_joint" type="fixed">
@@ -264,12 +272,18 @@
     </joint>
 
     <link name="ouster_link"/>
+    <!-- <link name="lidar_link"/> -->
     <link name ="imu_link"/>
     <joint name="ouster_joint" type="fixed">
         <origin xyz="0 0 0.31" rpy="0 0 0" />
         <parent link="body" />
         <child link="ouster_link" />
     </joint>
+    <!-- <joint name="ouster_lvisam" type="fixed">
+        <origin xyz="0 0 -0.31" rpy="0 0 0" />
+        <parent link="lidar_link" />
+        <child link="body" />
+    </joint> -->
     <joint name="ouster_imu_joint" type="fixed">
         <origin xyz="-0.157242 -0.061091 -0.020754" rpy="-3.1415926 0 0" />
         <parent link="ouster_link" />
