@@ -264,12 +264,17 @@
     </joint>
 
     <link name="ouster_link"/>
+    <link name ="imu_link"/>
     <joint name="ouster_joint" type="fixed">
-        <origin xyz="0 0 0.31" rpy="0 0 3.141" />
+        <origin xyz="0 0 0.31" rpy="0 0 0" />
         <parent link="body" />
         <child link="ouster_link" />
     </joint>
-
+    <joint name="ouster_imu_joint" type="fixed">
+        <origin xyz="-0.157242 -0.061091 -0.020754" rpy="-3.1415926 0 0" />
+        <parent link="ouster_link" />
+        <child link="imu_link" />
+    </joint>
     <!-- Standard accessories. -->
     <xacro:include filename="$(find spot_description)/urdf/accessories.urdf.xacro" />
 
