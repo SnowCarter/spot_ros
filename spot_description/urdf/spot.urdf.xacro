@@ -263,6 +263,13 @@
         <limit effort="1000" velocity="1000.00" lower="-2.7929" upper="-0.257725" />
     </joint>
 
+    <link name="ouster_link"/>
+    <joint name="ouster_joint" type="fixed">
+        <origin xyz="0 0 0.31" rpy="0 0 3.141" />
+        <parent link="body" />
+        <child link="ouster_link" />
+    </joint>
+
     <!-- Standard accessories. -->
     <xacro:include filename="$(find spot_description)/urdf/accessories.urdf.xacro" />
 
